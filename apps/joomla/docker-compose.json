@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "joomla",
+      "image": "joomla",
+      "environment": [
+        {
+          "key": "JOOMLA_DB_HOST",
+          "value": "db"
+        },
+        {
+          "key": "JOOMLA_DB_USER",
+          "value": "joomla"
+        },
+        {
+          "key": "JOOMLA_DB_PASSWORD",
+          "value": "examplepass"
+        },
+        {
+          "key": "JOOMLA_DB_NAME",
+          "value": "joomla_db"
+        },
+        {
+          "key": "JOOMLA_SITE_NAME",
+          "value": "Joomla"
+        },
+        {
+          "key": "JOOMLA_ADMIN_USER",
+          "value": "Joomla Hero"
+        },
+        {
+          "key": "JOOMLA_ADMIN_USERNAME",
+          "value": "joomla"
+        },
+        {
+          "key": "JOOMLA_ADMIN_PASSWORD",
+          "value": "joomla@secured"
+        },
+        {
+          "key": "JOOMLA_ADMIN_EMAIL",
+          "value": "joomla@example.com"
+        }
+      ],
+      "internalPort": 80,
+      "volumes": [
+        {
+          "hostPath": "joomla_data",
+          "containerPath": "/var/www/html",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    },
+    {
+      "name": "db",
+      "image": "mysql:8.0",
+      "environment": [
+        {
+          "key": "MYSQL_DATABASE",
+          "value": "joomla_db"
+        },
+        {
+          "key": "MYSQL_USER",
+          "value": "joomla"
+        },
+        {
+          "key": "MYSQL_PASSWORD",
+          "value": "examplepass"
+        },
+        {
+          "key": "MYSQL_RANDOM_ROOT_PASSWORD",
+          "value": "1"
+        }
+      ],
+      "volumes": [
+        {
+          "hostPath": "db_data",
+          "containerPath": "/var/lib/mysql",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
