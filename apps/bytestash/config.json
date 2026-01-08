@@ -2,13 +2,13 @@
   "name": "bytestash",
   "id": "bytestash",
   "available": true,
-  "short_desc": "Aa self-hosted web application designed to store, organise, and manage your code snippets efficiently..",
+  "short_desc": "A self-hosted web application designed to store, organise, and manage your code snippets efficiently.",
   "author": "jordan-dalby",
   "port": 5000,
   "categories": [
     "utilities"
   ],
-  "description": "ByteStash is a self-hosted web application designed to store, organise, and manage your code snippets efficiently. With support for creating, editing, and filtering snippets, ByteStash helps you keep track of your code in one secure place.",
+  "description": "ByteStash is a self-hosted web application designed to store, organise, and manage your code snippets efficiently. With support for creating, editing, and filtering snippets, ByteStash makes snippet management easy.",
   "tipi_version": 1,
   "version": "v1.5.9",
   "source": "https://github.com/jordan-dalby/ByteStash",
@@ -20,7 +20,7 @@
   "created_at": 1767869060469,
   "updated_at": 1767869060469,
   "dynamic_config": true,
-  "form_fields": []
+  "form_fields": [
     {
       "type": "random",
       "label": "Secret Token",
@@ -28,7 +28,6 @@
       "min": 128,
       "required": true,
       "env_variable": "JWT_SECRET"
-    },
-
-  
+    }
+  ]
 }
