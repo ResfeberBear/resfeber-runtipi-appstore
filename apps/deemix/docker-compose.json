@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "services": [
+    {
+      "name": "Deemix",
+      "image": "ghcr.io/bambanah/deemix:latest",
+      "environment": [
+        {
+          "key": "DEEMIX_SINGLE_USER",
+          "value": "true"
+        },
+        {
+          "key": "UMASK_SET",
+          "value": "022"
+        },
+        {
+          "key": "PUID",
+          "value": "1000"
+        },
+        {
+          "key": "PGID",
+          "value": "1000"
+        },
+        {
+          "key": "DEEMIX_HOST",
+          "value": "0.0.0.0"
+        }
+      ],
+      "internalPort": 6595,
+      "volumes": [
+        {
+          "hostPath": "${ROOT_FOLDER_HOST}/media",
+          "containerPath": "/downloads",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        },
+        {
+          "hostPath": "${APP_DATA_DIR}/data/deemix-config",
+          "containerPath": "/config",
+          "readOnly": false,
+          "shared": false,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
