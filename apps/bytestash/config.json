@@ -24,10 +24,10 @@
   "dynamic_config": true,
   "form_fields": [
     {
-      "type": "text",
+      "type": "random",
       "label": "Secret Token",
-      "max": 300,
-      "min": 62,
+      "max": 256,
+      "min": 128,
       "required": true,
       "env_variable": "JWT_SECRET"
     },
