@@ -20,7 +20,7 @@
   "created_at": 1767869060469,
   "updated_at": 1767869060469,
   "dynamic_config": true,
-  "form_fields": [
+  "form_fields": []
     {
       "type": "random",
       "label": "Secret Token",
